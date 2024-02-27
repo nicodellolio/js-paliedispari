@@ -47,8 +47,23 @@ if (numberCheck) {
 
 //creiamo ora il numero random per il CPU
 
-const cpuNumber = Math.floor(Math.random(1) * 5)
+const cpuNumber = Math.floor(Math.random(1) * 5 + 1)
 console.log(`cpuNumber is ` + cpuNumber);
 
+const sum = Number(userNumber) + Number(cpuNumber)
+console.log(`The sum of the two numbers is: ` + sum);
 
+
+//determiniamo ora il vincitore
+
+if (sum % 2 === 0 && userOddEven_Choice === 'Even') {
+    console.log('User win');
+    alert('You won!')
+} else if (sum % 1 === 0 && userOddEven_Choice === 'Odd') {
+    console.log('User win');
+    alert('Congratulation, you won!')
+} else {
+    console.log('CPU win');
+    alert('Sorry, you lose')
+}
 
