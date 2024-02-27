@@ -1,3 +1,4 @@
+//SENZA FUNZIONI
 //Chiediamo all'utente se sceglie pari o dispari e stampiamolo
 let userOddEven_Choice = prompt(`'O' for Odd, 'E' for Even.\nMake a choice`)
 
@@ -47,21 +48,68 @@ if (numberCheck) {
 
 //creiamo ora il numero random per il CPU
 
-const cpuNumber = Math.floor(Math.random(1) * 5 + 1)
-console.log(`cpuNumber is ` + cpuNumber);
+// const cpuNumber = Math.floor(Math.random(1) * 5 + 1)
+// console.log(`cpuNumber is ` + cpuNumber);
 
-const sum = Number(userNumber) + Number(cpuNumber)
-console.log(`The sum of the two numbers is: ` + sum);
+// const sum = Number(userNumber) + Number(cpuNumber)
+// console.log(`The sum of the two numbers is: ` + sum);
 
 
 //determiniamo ora il vincitore
 
-if (sum % 2 === 0 && userOddEven_Choice === 'Even') {
+// if (sum % 2 === 0 && userOddEven_Choice === 'Even') {
+//     console.log('User win');
+//     alert('You won!')
+// } else if (sum % 1 === 0 && userOddEven_Choice === 'Odd') {
+//     console.log('User win');
+//     alert('Congratulation, you won!')
+// } else {
+//     console.log('CPU win');
+//     alert('Sorry, you lose')
+// }
+
+
+//CON FUNZIONI
+//creiamo ora il numero random per il CPU
+
+//creiamo ora il numero random per il CPU
+function randomNumber (min_num, max_num ) {
+    const cpuNumber = Math.floor(Math.random(min_num) * max_num + 1)
+    return cpuNumber
+}
+console.log(`cpuNumber is ` + randomNumber(1,5));
+cpuNumber = randomNumber(1,5)
+
+//determiniamo la somma dei due numeri
+const sum = Number(userNumber) + Number(cpuNumber)
+console.log(`The sum of the two numbers is: ` + sum);
+
+
+// determiniamo se la somma è pari o dispari
+function oddEvenCheck (num) {
+    result = 0
+
+    if (num % 2 === 0) {
+    result = `Even`
+    } else {
+    result = `Odd`
+    }
+
+   return result
+}
+
+const oddEvenResult = oddEvenCheck(sum)
+console.log(`The sum is ` + oddEvenResult);
+
+//determiniamo ora il vincitore
+if (oddEvenResult % 2 === 0 && userOddEven_Choice === 'Even' ) {
     console.log('User win');
     alert('You won!')
-} else if (sum % 1 === 0 && userOddEven_Choice === 'Odd') {
+
+} else if (oddEvenResult % 1 === 0 && userOddEven_Choice === 'Odd') {
     console.log('User win');
-    alert('Congratulation, you won!')
+    alert('You won!')
+
 } else {
     console.log('CPU win');
     alert('Sorry, you lose')
