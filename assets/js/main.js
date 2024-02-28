@@ -22,9 +22,11 @@ function checkPalindrome(string) {
 
 const check = checkPalindrome(wordGot)
 if(check == true){
+	console.log(wordGot + " is palindrome");
 	alert("✅ The typed word is palindrome");
 }
 else{
+	console.log(wordGot + " is not palindrome");
   	alert("❌ The typed word is NOT palindrome");
 }
 
